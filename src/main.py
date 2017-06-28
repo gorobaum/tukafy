@@ -32,8 +32,8 @@ def detectFaces(img, tuka):
         M = cv2.getAffineTransform(pts2,pts1)
         rows, cols, ch = img.shape
         dst = cv2.warpAffine(tuka,M,(cols,rows))
-        img[y:y+h,x:x+w] = 0
-        result = img + dst
+        result[y:y+h,x:x+w] = 0
+        result = result + dst
     return result
 
 
